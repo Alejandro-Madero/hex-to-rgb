@@ -1,0 +1,103 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(235, 230, 230);
+}
+
+.form {
+  font-size: 4rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6rem;
+  width: 50rem;
+}
+
+.form input {
+  font-size: 3.5rem;
+  font-weight: 400;
+  flex: 1;
+  outline: transparent;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px dotted;
+  letter-spacing: 0.75rem;
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+}
+
+.form input:focus {
+  border-bottom: 1.75px dotted;
+  border-bottom-color: rgb(0, 0, 0);
+}
+
+.form__submit {
+  background-color: transparent;
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+  border: 1px dotted rgba(0, 0, 0, 1);
+
+  outline: transparent;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.form__submit:hover {
+  font-weight: 600;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.color__container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.copy__icon {
+  fill: rgba(255, 255, 255, 0.7);
+  stroke-width: 0.2px;
+
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.copy__icon:hover {
+  transform: scale(1.03);
+  fill: rgb(255, 255, 255);
+}
+
+.color-scheme {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.color-preview {
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 1rem;
+  width: 12rem;
+  height: 12rem;
+  border: 1px dotted;
+  cursor: pointer;
+}
