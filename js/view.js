@@ -3,6 +3,7 @@ const body = document.body;
 const inputs = document.querySelectorAll(".input");
 const copyBtns = document.querySelectorAll(".copy__icon");
 const schemeContainer = document.querySelector(".color-scheme");
+const title = document.querySelector(".title");
 
 export const renderColor = function (color) {
   body.style.backgroundColor = `${color}`;
@@ -65,7 +66,7 @@ export const displayColorScheme = function (scheme) {
     div.classList.add(`color__preview-${contrast}`);
     div.textContent = color.hex.value;
     div.style.backgroundColor = color.rgb.value;
-    // div.style.color = color.contrast.value;
+
     return div;
   });
 
@@ -74,7 +75,13 @@ export const displayColorScheme = function (scheme) {
     schemeContainer.insertAdjacentElement("beforeend", color)
   );
 
+  const titleColor = scheme[0].hex.value;
+  updateTitleColor(titleColor);
   previewClickHandler();
+};
+
+const updateTitleColor = function (color) {
+  title.style.color = color;
 };
 
 const previewClickHandler = function () {
