@@ -14,7 +14,7 @@ const handlerInput = async function (value) {
   view.updateColorCodes(codes);
 
   const colorScheme = await model.getColorScheme(value);
-  const colors = view.displayColorScheme(colorScheme.colors);
+  view.displayColorScheme(colorScheme.colors);
 };
 
 const handleCopyClick = function (color) {

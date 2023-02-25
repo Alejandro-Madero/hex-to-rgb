@@ -1,4 +1,5 @@
 /* CSS Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +17,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgb(235, 230, 230);
+  transition: background-color 0.3s;
 }
 
 .form {
@@ -34,15 +36,27 @@ body {
   flex: 1;
   outline: transparent;
   background-color: transparent;
-  border: none;
-  border-bottom: 1.5px dotted;
   letter-spacing: 0.75rem;
-  border-bottom-color: rgba(0, 0, 0, 0.3);
 }
 
-.form input:focus {
-  border-bottom: 1.75px dotted;
-  border-bottom-color: rgb(0, 0, 0);
+.input--dark {
+  color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-bottom: 1.5px dotted rgba(0, 0, 0, 0.3);
+}
+
+.input--dark:focus {
+  border-bottom: 1.75px dotted rgb(0, 0, 0);
+}
+
+.input--light {
+  color: rgb(255, 255, 255, 0.7);
+  border: none;
+  border-bottom: 1.5px dotted rgba(255, 255, 255, 0.3);
+}
+
+.input--light:focus {
+  border-bottom: 1.75px dotted rgb(255, 255, 255);
 }
 
 .form__submit {
@@ -70,34 +84,79 @@ body {
 }
 
 .copy__icon {
-  fill: rgba(255, 255, 255, 0.7);
-  stroke-width: 0.2px;
-
+  fill: #00000070;
   height: 2.5rem;
   width: 2.5rem;
   cursor: pointer;
   align-self: flex-end;
 }
 
+.copy__icon--light {
+  fill: #ffffff70;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
 .copy__icon:hover {
-  transform: scale(1.03);
-  fill: rgb(255, 255, 255);
+  transform: scale(1.1);
+  fill: #000000;
+}
+
+.copy__icon--light:hover {
+  transform: scale(1.1);
+  fill: #ffffff;
 }
 
 .color-scheme {
   display: flex;
   flex-wrap: wrap;
+  margin: 10rem 4rem;
   gap: 1.5rem;
 }
-.color-preview {
+
+.color__preview {
   display: grid;
   place-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: white;
   border-radius: 1rem;
   width: 12rem;
   height: 12rem;
-  border: 1px dotted;
   cursor: pointer;
+  letter-spacing: 0.5rem;
+  transition: all 0.2s;
+}
+
+.color__preview-light {
+  color: transparent;
+}
+
+.color__preview-dark {
+  color: transparent;
+}
+
+.color__preview-light:hover {
+  color: rgba(255, 255, 255);
+  transform: scale(1.1);
+}
+.color__preview-dark:hover {
+  color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.click-animation {
+  animation: click 0.3s forwards;
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
